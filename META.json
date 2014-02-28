@@ -61,5 +61,16 @@
       }
    },
    "release_status" : "unstable",
+   "resources" : {
+      "bugtracker" : {
+         "web" : "https://github.com/ytnobody/Vector-QRCode-IntoPDF/issues"
+      },
+      "homepage" : "https://github.com/ytnobody/Vector-QRCode-IntoPDF",
+      "repository" : {
+         "type" : "git",
+         "url" : "git://github.com/ytnobody/Vector-QRCode-IntoPDF.git",
+         "web" : "https://github.com/ytnobody/Vector-QRCode-IntoPDF"
+      }
+   },
    "version" : "0.01"
 }
