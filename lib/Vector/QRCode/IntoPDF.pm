@@ -13,7 +13,7 @@ use Class::Accessor::Lite (
     ro => [qw[pdf_file workdir]],
 );
 
-our $VERSION = "0.01";
+our $VERSION = "0.02";
 
 sub new {
     my ($class, %opts) = @_;
