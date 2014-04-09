@@ -4,11 +4,11 @@ use Test::More;
 use Vector::QRCode::IntoPDF;
 use File::Spec;
 use File::Temp 'tempdir';
-use Digest::SHA 'sha256_hex';
 
 my $tmpdir = tempdir(CLEANUP => 1);
 my $src_pdf_file = File::Spec->catfile(qw/t data dummy.pdf/);
 my $dst_pdf_file = File::Spec->catfile($tmpdir, 'result.pdf');
+my $expect_pdf_file = File::Spec->catfile(qw/t data expected.pdf/);
 
 my $obj = Vector::QRCode::IntoPDF->new(pdf_file => $src_pdf_file);
 
@@ -25,10 +25,14 @@ $obj->imprint(
 
 $obj->save($dst_pdf_file);
 
-open my $fh, $dst_pdf_file or die $!;
+open my $fh, '<', $dst_pdf_file or die $!;
 my $pdf_data = do{local $/; <$fh>};
 close $fh;
 
-is sha256_hex($pdf_data), '42ce539e66d8c2e703c56973a60160e980e5c48cc453dcbc5f1f1b9623ca2413';
+open $fh, '<', $expect_pdf_file or die $!;
+my $expect_bin = do{local $/; <$fh>};
+close $fh;
+
+is $pdf_data, $expect_bin;
 
 done_testing;
