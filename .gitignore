@@ -25,3 +25,5 @@ cover_db/
 MYMETA.*
 
 /Vector-QRCode-IntoPDF-*
+
+.DS_Store
