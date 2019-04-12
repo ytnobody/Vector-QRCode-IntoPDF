@@ -4,13 +4,13 @@
       "ytnobody <ytnobody@gmail.com>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Minilla/v0.14.1, CPAN::Meta::Converter version 2.132140",
+   "generated_by" : "Minilla/v3.1.3, CPAN::Meta::Converter version 2.150010",
    "license" : [
       "perl_5"
    ],
    "meta-spec" : {
       "url" : "http://search.cpan.org/perldoc?CPAN::Meta::Spec",
-      "version" : "2"
+      "version" : 2
    },
    "name" : "Vector-QRCode-IntoPDF",
    "no_index" : {
@@ -28,9 +28,7 @@
    "prereqs" : {
       "configure" : {
          "requires" : {
-            "CPAN::Meta" : "0",
-            "CPAN::Meta::Prereqs" : "0",
-            "Module::Build" : "0.38"
+            "Module::Build::Tiny" : "0.035"
          }
       },
       "develop" : {
@@ -44,6 +42,7 @@
       },
       "runtime" : {
          "requires" : {
+            "Class::Accessor::Lite" : "0",
             "File::Spec" : "0",
             "File::Temp" : "0",
             "PDF::API2" : "0",
@@ -72,5 +71,7 @@
          "web" : "https://github.com/ytnobody/Vector-QRCode-IntoPDF"
       }
    },
-   "version" : "0.02"
+   "version" : "0.02",
+   "x_serialization_backend" : "JSON::PP version 2.97001",
+   "x_static_install" : 1
 }
