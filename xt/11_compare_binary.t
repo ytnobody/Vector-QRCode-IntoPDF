@@ -30,7 +30,14 @@ open my $fh, '<', $dst_pdf_file or die $!;
 my $pdf_data = do{local $/; <$fh>};
 close $fh;
 
+# Replacing expected data because there is some differences among PDF-v1.3 and PDF-v1.4
 my $pdf_version_header = substr($pdf_data, 0, 8);
-like($pdf_version_header, qr/^\%PDF\-[0-9]+\.[0-9]+/);
+my $exp_file = $pdf_version_header =~ /^\%PDF\-1\.3/ ? $expect_pdf_file_v1_3 : $expect_pdf_file;
+
+open $fh, '<', $exp_file or die $!;
+my $expect_bin = do{local $/; <$fh>};
+close $fh;
+
+is $pdf_data, $expect_bin;
 
 done_testing;
