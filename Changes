@@ -2,6 +2,9 @@ Revision history for Perl extension Vector-QRCode-IntoPDF
 
 {{$NEXT}}
 
+0.05 2021-12-03T00:22:51Z
+    - Moved 11_simple.t to xt/
+
 0.04 2021-12-02T06:29:17Z
     - Added test data for PDF v1.4
 
